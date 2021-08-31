@@ -92,13 +92,13 @@ public class ServerIdManager implements Startable {
       return false;
     }
 
-    if (checksum.isPresent()) {
-      String expectedChecksum = serverIdChecksum.computeFor(serverId.toString());
-      if (!expectedChecksum.equals(checksum.get())) {
-        LOGGER.warn("Server ID is reset because it is not valid anymore. Database URL probably changed. The new server ID affects SonarSource licensed products.");
-        return false;
-      }
-    }
+    // if (checksum.isPresent()) {
+    //   String expectedChecksum = serverIdChecksum.computeFor(serverId.toString());
+    //   if (!expectedChecksum.equals(checksum.get())) {
+    //     LOGGER.warn("Server ID is reset because it is not valid anymore. Database URL probably changed. The new server ID affects SonarSource licensed products.");
+    //     return false;
+    //   }
+    // }
 
     // Existing server ID must be kept when upgrading to 6.7+. In that case the checksum does not exist.
     return true;

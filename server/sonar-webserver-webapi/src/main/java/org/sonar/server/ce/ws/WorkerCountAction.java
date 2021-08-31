@@ -32,7 +32,7 @@ import static org.sonar.server.ce.ws.CeWsParameters.ACTION_WORKER_COUNT;
 
 public class WorkerCountAction implements CeWsAction {
 
-  private static final int DEFAULT_WORKER_COUNT = 1;
+  private static final int DEFAULT_WORKER_COUNT = 5;
 
   private final UserSession userSession;
   private final WorkerCountProvider workerCountProvider;
